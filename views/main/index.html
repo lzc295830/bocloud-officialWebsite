@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+        {% for content in contents %}
+
+        <div class="listBox">
+            <div class="t_title">{{content.title}}</div>
+            <p class="colDefault">
+                作者：<span class="colInfo">{{content.user.username}}</span>
+                时间：<span class="colInfo">{{content.addTime|date('Y年m月d日 H:i:s', -8*60)}}</span>
+                阅读：<span class="colInfo">{{content.views}}</span>
+                评论：<span class="colInfo">{{content.comments.length}}</span>
+            </p>
+            <dfn><p>{{content.description}}</p></dfn>
+            <div class="function">
+                <a href="/view?contentid={{content.id}}">阅读全文</a>
+            </div>
+        </div>
+        {% endfor %}
+
+
+<nav aria-label="...">
+    <ul class="pager">
+        <li class="previous">
+            {% if page <= 1 %}
+            <a href="#"><span aria-hidden="true">&larr;</span> 没有上一页了</a>
+            {% else %}
+            <a href="/?category={{category}}&page={{page-1}}"><span aria-hidden="true">&larr;</span> 上一页</a>
+            {% endif %}
+        </li>
+        {% if pages > 0 %}
+        <li>{{page}}/{{pages}}</li>
+        {% endif %}
+        <li class="next">
+            {% if page >= pages %}
+            <a href="#">没有下一页了 <span aria-hidden="true">&rarr;</span></a>
+            {% else %}
+            <a href="/?category={{category}}&page={{page+1}}"> 下一页<span aria-hidden="true">&rarr;</span></a>
+            {% endif %}
+        </li>
+    </ul>
+</nav>
+{% endblock %}

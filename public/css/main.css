@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.top_picture{
+    /*position: fixed;*/
+}
+.nav_top{
+    /*position: fixed;*/
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+.nav_ul{
+    display: inline-block;
+    float: left;
+    list-style: none;
+}
+.nav_ul:first-child{
+    margin-left: 250px;
+}
+.nav_ul li{
+    float: left;
+    color: #0f0f0f;
+    font-size: 30px;
+
+}
+.nav_ul li + li {
+    margin-left:20px;
+}
+.col{
+    color: cadetblue;
+}
+.focus{
+    color: indigo;
+}
+/*.center-block {*/
+    /*display: block;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+/*}*/
+#therightBox{
+    float: right;
+    width: 300px;
+    margin-top: 50px;
+}
+#theleftBox{
+    /*background-color: cornsilk;*/
+    float: left;
+    margin-left: 150px;
+    margin-top: 20px;
+    width: 800px;
+}
+.right_Box{
+    /*display: none;*/
+
+    height: 200px;
+    width: 200px;
+    background-color: honeydew;
+    float: right;
+
+    margin-right: 25px;
+    position: fixed;
+    margin-top: 50px;
+    /*padding-top:35px;*/
+
+}
+.btn{
+    border-radius: 5px;
+    margin-top: 5px;
+    /*margin-bottom: 10px;*/
+}
+.tc{
+    text-align: center;
+    margin-top: 20px;
+}
+.sp{
+   margin-top: 20px;
+}
+.another{
+    /*margin-top: 3px;*/
+}
+.denglubtn{
+text-align: center;
+    background-color: #e4433e;
+
+}
+
+.zhuce{
+    display: none;
+    height: 265px;
+    width: 250px;
+    /*background-color: aqua;*/
+    /*float: right;*/
+    /*margin-top: 80px;*/
+    /*margin-right: 0px;*/
+    /*padding-top:35px;*/
+}
+.zcts{
+    text-align: center ;
+}
+.zhucehtn{
+    text-align: center;
+    background-color: #e4433e;
+}
+
+.dlts{
+    text-align: center;
+}
+.title{
+    /*display: none;*/
+    height: 200px;
+    width: 250px;
+    /*background-color: aqua;*/
+    /*float: right;*/
+    /*margin-top: 80px;*/
+    /*margin-right: 0px;*/
+    /*padding-top:35px;*/
+}
+.xsyhxx{
+    margin-top: 20px;
+    margin-bottom: 10px;
+text-align: center;
+}
+.wel{
+    text-align: center;
+    color: #e4433e;
+    font-size: 20px;
+}
+.logout{
+
+}
+input{
+    /*border-radius: 5px;*/
+
+}
+.dl0{
+    text-align: center;
+}
+.zcb0{
+    text-align: center;
+}
+.ts0{
+    text-align: right;
+}
+.ts1{
+    text-align: center;
+    margin-top: 10px;
+}
+
+/*内容展示*/
+.listBox{
+    padding-top: 20px;
+    background-color: #c9e2b3;
+    text-align: center;
+    height: 150px;
+    width: 600px;
+    margin-top: 50px;
+}
+.colInfo{
+    color: darkorange;
+}
+.t_title{
+    font-size: 24px;
+    color: #31708f;
+}

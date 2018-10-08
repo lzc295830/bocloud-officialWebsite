@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>lzc的博客</title>
+    <link rel="stylesheet"  type="text/css" href="/public/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap-theme.min.css">
+    <script src="/public/js/jquery-3.3.1.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+    <script src="/public/js/index.js"></script>
+</head>
+<body >
+<!--导航-->
+<div class="top_picture">
+    <img src="/public/css/top4.jpg"/>
+</div>
+
+<div class="nav_top">
+        <ul class="nav_ul">
+        {% if category == '' %}
+        <li><a class="focus col" href="/?category">首页</a></li>
+        {%else%}
+        <li><a class="col" href="/?category">首页</a></li>
+        {% endif %}
+
+        {% for cate in categories %}
+
+        {% if category == cate.id %}
+        <li><a class="col focus" href="/?category={{cate.id}}">{{cate.name}}</a></li>
+        {%else%}
+        <li><a class="col" href="/?category={{cate.id}}">{{cate.name}}</a></li>
+        {% endif %}
+        {% endfor %}
+        </ul>
+</div>
+
+
+<div class="therightBox " id="therightBox">
+    {% if userInfo._id %}
+    <!--显示用户信息-->
+
+    <div class="title right_Box">
+        <div class="xsyhxx">用户名:  {{userInfo.username}}</div>
+        {% if userInfo.isAdmin %}
+        <div class="wel">你好！管理员。<br/><br />
+            <a href="/admain">进入管理</a>
+        </div>
+        {% else %}
+        <div class="wel">欢迎光临我的博客。</div>
+        {% endif %}
+        <div class="tc"><button class="logout btn">退出</button></div>
+    </div>
+    {% else %}
+    <!--登录页面-->
+    <div class="denglu right_Box">
+        <div class="dl0 sp">
+            <span class="sp1">账号:</span><br />
+            <input type="text" class="name0" name="zhanghao">
+            <br />
+            <span class="sp2">密码:</span><br />
+            <input type="password" class="pass0" name="mima">
+            <br />
+            <div> <button class="denglubtn btn">登录</button></div>
+            <br />
+            <div class=" another"><a href="javascript:;" class="dqz" >点击前往注册</a></div>
+        </div>
+
+        <!--<p class="ts0">-->
+            <!--&lt;!&ndash;没有账号？&ndash;&gt;-->
+            <!--<a href="javascript:;" class="dqz" >点击前往注册</a>-->
+        <!--</p>-->
+        <p class="dlts"></p>
+    </div>
+
+    <!--注册页面-->
+    -<div class="zhuce right_Box">
+    <div class="zcb0 sp">
+        账号:<br />
+        <input type="text" class="name0zc" name="zhanghaozc">
+        <br>
+        密码:<br />
+        <input type="password" class="pass0zc" name="mimazc">
+        <br>
+        确认密码:
+        <br />
+        <input type="password" class="pass0zcq" name="mimazcq">
+        <br />
+        <div><button class="zhucehtn btn">注册</button></div>
+        <div class="ts1 another">
+            <!--已有账号？-->
+            <a href="javascript:;" class="another">点击前往登录</a>
+        </div>
+    </div>
+    <p class="zcts"></p>
+</div>
+    {% endif %}
+</div>
+
+<div class="theleftBox" id="theleftBox">
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+</body>
+</html>
