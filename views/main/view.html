@@ -1,34 +1,39 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<div class="listBox">
-    <h5>{{content.title}}</h5>
-    <p class="colDefault">
-        作者：<span class="colInfo">{{content.user.username}}</span>
-        时间：<span class="colInfo">{{content.addTime|date('Y年m月d日 H:i:s', -8*60)}}</span>
+<div class="content_title">
+    <h4>{{content.title}}</h4>
+    <!--<p class="colDefault">-->
+        <!--作者：<span class="colInfo bug">{{content.user._username}}</span>-->
+        <!--时间：<span class="colInfo">{{content.addTime|date('Y年m月d日 H:i:s', -8*60)}}</span>-->
         阅读：<span class="colInfo">{{content.views}}</span>
         评论：<span class="colInfo">{{content.comments.length}}</span>
     </p>
-    <dfn>
-     {{content.content}}
-    </dfn>
+</div>
+<div class="content_xx">
+        {{content.content}}
 </div>
 
-<div class="listBox message">
-<h3 class="textleft"><strong>评论</strong>
-<span class="em">一共有<em id="messageCount">0</em>条评论</span></h3>
+<div class="content_comments message">
+<h4 class="textleft"><span class="em">一共有<em id="messageCount">0</em>条评论</span></h4>
     {% if userInfo._id %}
     <!--<p class="textleft">zmouse</p>-->
-    <p class="textleft clear">
-        <textarea id="messageContent"></textarea>
-        <input type="hidden" id="contentId" value="{{content.id}}" />
-        <button id="messageBtn" class="submit">提交</button>
-    </p>
-    {% else %}
-    <p class="bgDanger" style="line-hight:30px">你还没有登录，请先登录!</p>
-    {% endif %}
-    <div class="messageList">
+    <div>
+        <p class="textleft clear">
+            <textarea id="messageContent" rows="2" cols="60"></textarea>
+            <input type="hidden" id="contentId" value="{{content.id}}" />
+            <button id="messageBtn" class="submit">提交</button>
+        </p>
     </div>
+    {% else %}
+    <div>
+        <p class="bgDanger" style="line-hight:30px">你还没有登录，请先登录!</p>
+    </div>
+    {% endif %}
+</div>
+
+<!--评论内容展示-->
+    <div class="messageList"></div>
 
     <nav aria-label="...">
         <ul class="pager">
@@ -37,6 +42,5 @@
             <li class="next"></li>
         </ul>
     </nav>
-</div>
 <script src="/public/js/comment.js"></script>
 {% endblock %}

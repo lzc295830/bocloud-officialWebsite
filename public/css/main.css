@@ -155,7 +155,7 @@ input{
     background-color: #c9e2b3;
     text-align: center;
     height: 150px;
-    width: 600px;
+    width: 800px;
     margin-top: 50px;
 }
 .colInfo{
@@ -164,4 +164,37 @@ input{
 .t_title{
     font-size: 24px;
     color: #31708f;
+}
+.content_title{
+    padding-top: 20px;
+    background-color: #c9e2b3;
+    text-align: center;
+    height: 100px;
+    width: 800px;
+    margin-top: 50px;
+}
+.content_xx{
+    margin-top: 10px;
+}
+/*评论区*/
+.messageList{
+text-align: center;
+    /*background-color: ;*/
+    /*width: 600px;*/
+    padding-top: 10px;
+}
+.messageBox{
+    background-color: mistyrose;
+    margin-top: 10px;
+}
+.messageBox .name{
+    text-align: left;
+}
+.content_comments{
+    padding-top: 20px;
+    background-color: beige;
+    text-align: center;
+    height: 120px;
+    width: 800px;
+    margin-top: 50px;
 }

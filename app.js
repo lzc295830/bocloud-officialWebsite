@@ -73,7 +73,7 @@ mongoose.connect('mongodb://localhost:27018/blog', function (err) {
         console.log('数据库连接失败');
     } else {
         console.log('数据库连接成功');
-        app.listen(108);
+        app.listen(8082);
     }
 });
 
